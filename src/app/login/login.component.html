@@ -1,0 +1,29 @@
+<div class="auth-page">
+  <div class="container page">
+    <div class="row">
+
+      <div class="col-md-6 offset-md-3 col-xs-12">
+        <h1 class="text-xs-center">Login</h1>
+        <p class="text-xs-center">
+          <a [routerLink]="['/register']">Need an account?</a>
+        </p>
+
+        <!-- <ul class="error-messages">
+          <li>That email is already taken</li>
+        </ul> --> 
+
+        <form #f="ngForm" (ngSubmit)="login(f)" ngNativeValidate>          
+          <fieldset class="form-group">
+            <input class="form-control form-control-lg" name="email" ngModel type="text" placeholder="Email" required>
+          </fieldset>
+          <fieldset class="form-group">
+            <input class="form-control form-control-lg" type="password" name="password" ngModel placeholder="Password" required>
+          </fieldset>
+          <button class="btn btn-lg btn-primary pull-xs-right" type="submit" >
+            Login
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

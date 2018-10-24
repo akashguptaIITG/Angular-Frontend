@@ -1,0 +1,33 @@
+
+       <nav class="navbar navbar-light">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">CodeHub</a>
+          <ul class="nav navbar-nav pull-xs-right">
+            <li class="nav-item">
+              <!-- Add "active" class when you're on that page" -->
+              <a class="nav-link active" [routerLink]="['/home']">Home</a>
+            </li>
+            <li class="nav-item" *ngIf="isAuthenticated"> 
+              <a class="nav-link" [routerLink]="['editor']">
+                <i class="ion-compose"></i>&nbsp;New Post
+              </a>
+            </li>
+            <li class="nav-item" *ngIf="isAuthenticated">
+              <a class="nav-link logout" (click)="logOut()">
+                &nbsp;LogOut
+              </a>
+            </li>
+            <li class="nav-item" *ngIf="!isAuthenticated">
+              <a class="nav-link" [routerLink]="['login']">
+                &nbsp;Login
+              </a>
+            </li>
+            <li class="nav-item" *ngIf="!isAuthenticated">
+              <a class="nav-link" [routerLink]="['/register']" >Sign up</a>
+            </li>
+            <li class="nav-item"  *ngIf="isAuthenticated">
+                <a class="nav-link" [routerLink]="['/profiles',user.username]">{{user.username}}</a>
+              </li>
+          </ul>
+        </div>
+      </nav>
